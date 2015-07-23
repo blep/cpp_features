@@ -1,0 +1,15 @@
+# Build matrix / environment variable are explained on:
+# http://about.travis-ci.org/docs/user/build-configuration/
+# This file can be validated on:
+# http://lint.travis-ci.org/
+before_install: sudo apt-get install cmake
+language: cpp
+compiler:
+  - gcc
+  - clang
+script: cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_VERBOSE_MAKEFILE=$VERBOSE_MAKE . && make test
+env:
+  global:
+    - CPP_FEATURES_CONTINUOUS_INTERATION=1
+  matrix:
+    - BUILD_TYPE=debug VERBOSE VERBOSE_MAKE=true
