@@ -1,8 +1,18 @@
+# --output-on-failure
+# CMake provide detection for some language features (and automatically set related compiler flags):
+# http://stackoverflow.com/questions/10851247/how-to-activate-c-11-in-cmake
+# http://www.cmake.org/cmake/help/v3.1/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html
+# http://www.cmake.org/cmake/help/v3.1/prop_tgt/CXX_STANDARD.html
+# http://www.cmake.org/cmake/help/v3.1/prop_tgt/CXX_STANDARD_REQUIRED.html
+
+set(MAX_STANDARD_VERSION 14) # 98, 11, 14
+
 function( feature_add_test FIRST_SOURCE)
 # Remarks: we could use CMAKE_PARSE_ARGUMENTS() for fancy stuffs like add_executable()
     string( REPLACE ".cpp" "" testname ${FIRST_SOURCE} )
     # ARGN contain all additional function parameters
     add_executable( ${testname} ${FIRST_SOURCE} ${ARGN} ) 
+	set_property(TARGET ${testname} PROPERTY CXX_STANDARD ${MAX_STANDARD_VERSION})
     add_test( NAME ${testname} COMMAND ${testname} )
 endfunction( feature_add_test )
 
