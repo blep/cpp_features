@@ -12,7 +12,7 @@ language: cpp
 compiler:
   - gcc
   - clang
-script: cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_VERBOSE_MAKEFILE=$VERBOSE_MAKE . && make && make test
+script: cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_VERBOSE_MAKEFILE=$VERBOSE_MAKE . && make -k all test
 env:
   global:
     - CPP_FEATURES_CONTINUOUS_INTERATION=1
