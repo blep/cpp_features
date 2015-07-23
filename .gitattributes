@@ -1,0 +1,13 @@
+* text=auto
+*.vcproj	eol=crlf
+*.sln	eol=crlf
+*.bat		eol=crlf
+*.sh		eol=lf
+*.yml		eol=lf
+*.json		eol=lf
+*.cpp		eol=lf
+*.hpp	eol=lf
+*.h		eol=lf
+*.py		eol=lf
+*.jpg		-text
+*.png		-text
