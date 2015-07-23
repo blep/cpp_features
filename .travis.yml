@@ -2,7 +2,12 @@
 # http://about.travis-ci.org/docs/user/build-configuration/
 # This file can be validated on:
 # http://lint.travis-ci.org/
-before_install: sudo apt-get install cmake
+# New APT install:
+# http://docs.travis-ci.com/user/migrating-from-legacy/?utm_source=legacy-notice&utm_medium=banner&utm_campaign=legacy-upgrade
+addons:
+  apt:
+    packages:
+    - cmake
 language: cpp
 compiler:
   - gcc
