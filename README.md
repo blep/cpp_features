@@ -5,3 +5,4 @@ Use CMake ctest to test for successful execution or expected compilation failure
 
 Test to do:
 - final with inheritance
+- __func__ not in param decl
