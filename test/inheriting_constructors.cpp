@@ -61,7 +61,7 @@ int main()
         return 1;
     if (o1.x_ != 1234)
         return 1;
-    if (o2.x_ != 2)
+    if (o2.x_ != 5)
         return 1;
     if (o3.x_ != (2*3))
         return 1;
