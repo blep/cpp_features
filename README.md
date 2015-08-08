@@ -15,7 +15,8 @@ inheriting_constructors.cpp:
 Idea to explore:
 Can you use UDL to generate compile time string formatting ?
 "Hello %s!"fmt( "World" );
-
+=> no reasonnable until C++ 17 as currently constexpr must be recursive.
+=> additional constexpr is not evaluated only once on all compilers
   
   
 Experimental C++ 17 stuffs:
