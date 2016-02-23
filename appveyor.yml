@@ -1,0 +1,31 @@
+# AppVeyor file
+# http://www.appveyor.com/docs/appveyor-yml
+
+# clone directory
+clone_folder: c:\projects\cpp_features
+
+# branches to build
+branches:
+  # whitelist
+  only:
+    - master
+
+# fetch git repository sub-modules
+install:
+    - git submodule update --init --recursive
+
+platform:
+    - x86
+
+os:
+    - Visual Studio 2015
+
+configuration: Release
+
+build:
+
+build_script:
+ - cd c:\projects\cpp_features
+ - cmake CMakeLists.txt -G "Visual Studio 14 2015"
+ - msbuild /m /p:Configuration=Release /p:Platform="Win32" CppFeatures.sln
+ - ctest -C "Debug"
