@@ -73,10 +73,34 @@ template<typename A, typename B>
 MyPerfectPair(A, B) -> MyPerfectPair<A, B>;
 
 
+// Test if we can declare deduction guide for a foreign library -> no
+#if 0
+namespace Other {
+    template<typename T>
+    struct Wrap
+    {
+        template<typename U>
+        Wrap(U &&u)
+        {
+        }
+    };
+}
+
+
+namespace Mine {
+    using Other::Wrap;
+
+    template<typename T>
+    Wrap(const T a)->Wrap<T>; // error C2643: deduction guide should be declared in the same scope as the corresponding class template 'Other::Wrap'
+}
+#endif
+
+
 
 void typeTracer(int x)
 {
 }
+
 
 int main()
 {
