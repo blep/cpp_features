@@ -86,6 +86,9 @@ int main()
 //    typeTracer(s1);
     static_assert( std::is_same_v<decltype(s1), StaticString<6>> );
 
+    MyPair p1b{ 1729, "hello" };
+    static_assert(std::is_same_v<decltype(p1b), MyPair<int, char[6]>>);// watch out, not const char
+
     Container<int>::Iterator it;
     Container cont{ it, it };  // using CTAD deduction guide
 
