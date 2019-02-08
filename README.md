@@ -16,7 +16,6 @@ Test to do:
 - constexpr lambda
 - structured binding: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0217r3.html; auto [x,y] = tuple or array
 - if (init; condition) and switch (init; condition)
-- generalization of range based for loop (sentinel...) http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0184r0.html
 - Direct list-initialization of enums => custom int type enum class MyInt {}; MyInt value{5};   // < implicit conversion allowed.
 - variant
 - optional

@@ -28,11 +28,7 @@ int main()
         return 1;
 
     Obj && mo = std::move(o);
-    if (o.value() != "mutable") // mo is an lvalue, hence can only be resolved to & or const &
-        return 1;
-
-    Obj && mo = std::move(o);
-    if (std::move(o).value() != "movable")
+    if (mo.value() != "mutable") // mo is an lvalue, hence can only be resolved to & or const &
         return 1;
 
     return 0;

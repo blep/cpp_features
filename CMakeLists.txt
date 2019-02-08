@@ -24,6 +24,9 @@ endmacro()
 if ( MSVC )
     # Force parallel compilation
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP4")
+    # DO NOT truncate "callstack" on constexpr compilation error
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /constexpr:backtrace10000")
+    
 endif( MSVC )
 
 add_subdirectory( test )
