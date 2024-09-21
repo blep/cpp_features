@@ -11,7 +11,7 @@ https://github.com/AnthonyCalandra/modern-cpp-features?tab=readme-ov-file
 [ ] co-routine
 [ ] module (*.ixx)
 [ ] std::string starts_with, ends_with, contains
-[ ] std::format
+[x] std::format, std::vformat, std::format_to
 [ ] range-based for loop with initializer
 [ ] immediate function (consteval)
 
