@@ -3,6 +3,20 @@ Demo of new C++ features (C++ 03, 11, 14) accross compiler.
 
 Use CMake ctest to test for successful execution or expected compilation failure.
 
+C++20 features:
+Good summary of C++ features by version: 
+https://github.com/AnthonyCalandra/modern-cpp-features?tab=readme-ov-file
+
+[x] concept
+[ ] co-routine
+[ ] module (*.ixx)
+[ ] std::string starts_with, ends_with, contains
+[ ] std::format
+[ ] range-based for loop with initializer
+[ ] immediate function (consteval)
+
+
+
 Good summary of C++17 features:
 https://stackoverflow.com/questions/38060436/what-are-the-new-features-in-c17
 
@@ -25,6 +39,7 @@ Test to do:
 - make_from_tuple
 - is_invokable
 - std::clamp // <= is generated code as good as non-branching code used in game?
+- std::byte
 
 Stuffs to investigate:
 inheriting_constructors.cpp:

@@ -1,16 +1,17 @@
 // #include <cstdalign> // C99
 #include <cstddef>
+#include <__stddef_offsetof.h>
 
 struct TestAlignAsType
 {
     char pad1_;
-    char alignas(void*) buffer[8];
+    alignas(alignof(void*)) char buffer[8];
 };
 
 struct TestAlignAsIntegral
 {
     char pad1_;
-    char alignas(128) buffer[8];
+    alignas(128) char buffer[8];
 };
 
 int main()

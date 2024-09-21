@@ -135,7 +135,7 @@ namespace blcx {
                     }
                 }
                 char buffer[21];
-                index = sizeof(buffer) - 1;
+                size_t index = sizeof(buffer) - 1;
                 do
                 {
                     char digit = '0' + normalized % 10;

@@ -15,11 +15,11 @@ int main()
     static_assert(std::is_same_v<decltype(s2), std::string_view>);
 
     auto s3 = u8"123";
-    static_assert(std::is_same_v<decltype(s3), const char *>);
+    static_assert(std::is_same_v<decltype(s3), const char8_t *>);
     auto s3s = u8"123"s;
-    static_assert(std::is_same_v<decltype(s3s), std::string>);
+    static_assert(std::is_same_v<decltype(s3s), std::basic_string<char8_t>>);
     auto s3sv = u8"123"sv;
-    static_assert(std::is_same_v<decltype(s3sv), std::string_view>);
+    static_assert(std::is_same_v<decltype(s3sv), std::basic_string_view<char8_t>>);
 
     auto s4 = u"123";
     static_assert(std::is_same_v<decltype(s4), const char16_t *>);
@@ -36,7 +36,10 @@ int main()
     static_assert(std::is_same_v<decltype(s5sv), std::u32string_view>);
 
     std::cout << s1 << s2 << "\n";
+#if 0
+    // std::cout is not compatible with char8_t string
     std::cout << s3 << s3s << s3sv << "\n";
+#endif
 
     // Cannot serialize u16 / u32 using cout/wcout...
     //std::cout << s4 << s4s << s4sv << "\n";

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.26)
 
 # Notes: project must be at the top of this file, otherwise the following error is generated:
 #CMake Error: Error required internal CMake variable not set, cmake may be not be built correctly.

@@ -107,7 +107,7 @@ namespace blcx {
         {
             if (index == 0)
             {
-                throw std::exception(message);
+                throw std::runtime_error(message);
             }
             --index;
             char c = message[index];
@@ -148,7 +148,7 @@ namespace blcx {
             case 14: printByte_14(c, shift); break;
             case 15: printByte_15(c, shift); break;
             default:
-                throw std::exception("unreachable code");
+                throw std::runtime_error("unreachable code");
             }
         }
 

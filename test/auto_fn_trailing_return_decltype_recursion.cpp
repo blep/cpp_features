@@ -8,7 +8,7 @@ struct Algo {
 
 
     template<typename X, typename... Args>
-    static auto sum( X x, Args... args ) -> decltype( x + sum(args) )
+    static auto sum( X x, Args... args )
     {
         return x + sum(args...);
     }
